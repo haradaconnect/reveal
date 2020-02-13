@@ -103,6 +103,7 @@ footer {
 }
 .veil nav a {
   color: #fff;
+  display: block;
 }
 .veil nav .navItem {
   opacity: 0;

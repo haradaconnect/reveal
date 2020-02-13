@@ -44,22 +44,20 @@ $(document).ready(function() {
     clearTimeout(timer);
   }, 1500);
 /*=== Unloading ===*/
-  $('a:not([href^="#"]):not([target])').on('click', function(e){
+  $('nav a:not([href^="#"]):not([target])').on('click touchstart', function(e){
     e.preventDefault(); 
-    if ($(this).attr('href') !== undefined) {
-      url = $(this).attr('href');
-      if (url !== '') {
-        $('.veil *').css({opacity: 0});
-        $('.veil').removeClass('right');
-        setTimeout(function() {
-          window.location = url;
-        }, 1000);
-      }
-      return false;
+    url = $(this).attr('href');
+    if (url !== '' && url !== undefined) {
+      $('.veil *').css({opacity: 0});
+      $('.veil').removeClass('right');
+      setTimeout(function() {
+        window.location = url;
+      }, 1000);
     }
+    return false;
   });
 /*=== Smooth scroll ===*/
-  $('a[href^="#"]').on('click', function() {
+  $('a[href^="#"]').on('click touchstart', function() {
     var margin = (device === 'pc') ? 100 : 0;
     var href = $(this).attr('href');
     var target = $((href=='#' || href=='') ? 'html' : href);
@@ -72,10 +70,8 @@ $(document).ready(function() {
   $('.navBtn').on('click touchstart', function() {
     $(this).parents(target).toggleClass('open');
   });
-  $('nav a').on('click touchstart', function() {
-    if ($(this).attr('href') !== undefined) {
-      $(this).parents(target).removeClass('open');
-    }
+  $('nav a:not(.current)').on('click touchstart', function() {
+    $(this).parents(target).removeClass('open');
   });
   // footer避け
   $main = $('main');
