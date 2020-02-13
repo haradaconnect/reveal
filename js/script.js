@@ -69,10 +69,10 @@ $(document).ready(function(){
   });
 /*=== Hamberger ===*/
   var target = '.veil';
-  $('.navBtn').on('click', function() {
+  $('.navBtn').on('click touchstart', function() {
     $(this).parents(target).toggleClass('open');
   });
-  $('nav a').on('click', function() {
+  $('nav a').on('click touchstart', function() {
     if ($(this).attr('href') !== undefined) {
       $(this).parents(target).removeClass('open');
     }

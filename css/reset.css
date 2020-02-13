@@ -40,14 +40,11 @@ table {
 a {
   text-decoration: none;
 }
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-*:focus {
-  outline: none;
-}
+*:hover,
+*:focus,
 *:active {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 label {
   display: inline-block;
