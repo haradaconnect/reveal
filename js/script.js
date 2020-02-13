@@ -2,7 +2,7 @@
   Setting
 ====================================*/
 
-$(document).ready(function(){
+$(document).ready(function() {
 /*====================================
   Initialization
 ====================================*/
