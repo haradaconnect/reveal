@@ -43,15 +43,6 @@ header {
   background-color: #F68F65;
   position: relative;
 }
-/*=== Header fixed ===*/
-body {
-  padding-top: 100px;
-}
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-}
 .current::before {
   width: 8px;
   height: 2px;
@@ -61,6 +52,15 @@ header {
   bottom: 0;
   left: -13px;
   margin: auto;
+}
+/*=== Header fixed ===*/
+body {
+  padding-top: 100px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 @media screen and (max-width: 768px) {
   body {
@@ -361,4 +361,7 @@ main .container {
 }
 _::-webkit-full-page-media, _:future, :root .veil {
   bottom: env(safe-area-inset-bottom);
+}
+_::-webkit-full-page-media, _:future, :root .veil#veilAnchor {
+  top: env(safe-area-inset-top);
 }

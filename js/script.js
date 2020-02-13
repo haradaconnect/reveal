@@ -46,15 +46,17 @@ $(document).ready(function(){
 /*=== Unloading ===*/
   $('a:not([href^="#"]):not([target])').on('click', function(e){
     e.preventDefault(); 
-    url = $(this).attr('href');
-    if (url !== '') {
-      $('.veil *').css({opacity: 0});
-      $('.veil').removeClass('right');
-      setTimeout(function() {
-        window.location = url;
-      }, 1000);
+    if ($(this).attr('href') !== undefined) {
+      url = $(this).attr('href');
+      if (url !== '') {
+        $('.veil *').css({opacity: 0});
+        $('.veil').removeClass('right');
+        setTimeout(function() {
+          window.location = url;
+        }, 1000);
+      }
+      return false;
     }
-    return false;
   });
 /*=== Smooth scroll ===*/
   $('a[href^="#"]').on('click', function() {
@@ -66,12 +68,14 @@ $(document).ready(function(){
     return false;
   });
 /*=== Hamberger ===*/
-  var $target = $('.veil');
-  $target.find('.navBtn').on('click', function() {
-    $(this).parents('.veil').toggleClass('open');
+  var target = '.veil';
+  $('.navBtn').on('click', function() {
+    $(this).parents(target).toggleClass('open');
   });
-  $target.find('nav a').on('click', function() {
-    $(this).parents('.veil').removeClass('open');
+  $('nav a').on('click', function() {
+    if ($(this).attr('href') !== undefined) {
+      $(this).parents(target).removeClass('open');
+    }
   });
   // footer避け
   $main = $('main');
