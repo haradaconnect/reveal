@@ -34,7 +34,7 @@ $(document).ready(function() {
     windowBot = windowTop + windowH;
   });
 /*=== Arc text ===*/
-  $('.arcText').arctext({radius: 50});
+  $('.arcText').arctext({radius: 40});
 /*====================================
   Operation
 ====================================*/

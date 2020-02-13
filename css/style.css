@@ -44,6 +44,7 @@ header {
   position: relative;
 }
 .current::before {
+  content: '';
   width: 8px;
   height: 2px;
   background-color: #fff;
@@ -156,10 +157,13 @@ footer {
   transform: translate(10px, 4px) rotate(-45deg);
 }
 .arcText {
+  font-size: 10px;
   text-align: center;
   color: #fff;
+  display: flex;
+  justify-content: center;
   position: absolute;
-  top: -20px;
+  top: -14px;
   left: 0;
   right: 0;
   margin: auto;
@@ -251,7 +255,7 @@ footer {
 .veil.open#veilAnchor {
   transform: translateX(-250px) skewX(-45deg);
 }
-.veil#veilAnchor .drawer{
+.veil#veilAnchor .drawer {
   top: 0;
   bottom: auto;
   left: auto;
